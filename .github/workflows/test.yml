@@ -57,23 +57,19 @@ jobs:
       ################################      
       - name: Check sample folder
         run: |
-          echo ""
-          echo "##############################"
-          echo "#    Check sample folder     #"
-          echo "##############################"
-          echo ""
-          echo ""
-          if exist Sample.meta;
+          if [ -f ${{ matrix.projectPath }}/Sample.meta ];
           then
-             echo "Sample.meta exist and pollut your environement"
+             echo "Sample.meta exist. Please remove it from your project"
              exit 1
           fi
-
-          if exist ./Sample/;
+          
+          if [ -d ${{ matrix.projectPath }}/Sample/ ];
           then
-             echo "Sample.meta exist and pollut your environement"
+             echo "Sample.meta exist. Please ensure this folder is hiding for unity renaming it Sample~. Also ensure that meta Sample.meta doesn't exist"
              exit 1
           fi
+          
+          echo "Sample folder ok"
             
       # Run tests
       - name: "Run tests"
