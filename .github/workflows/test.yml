@@ -116,7 +116,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-          projectPath: ${{ matrix.projectPath }
+          projectPath: ${{ matrix.projectPath }}
           
      # Upload build
       - uses: actions/upload-artifact@v2
