@@ -90,7 +90,7 @@ jobs:
           testMode: ${{ matrix.testMode }}
           packageMode: true
            # List of parameters here : https://docs.unity3d.com/Manual/CommandLineArguments.html
-          customParameters: -nographics assemblyFilters:+[YourCompany].[YourPackageName].*,-*Tests*
+          customParameters: -nographics assemblyFilters:+open-source-unity-package.unit-test.*,-*Tests*
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport'
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
