@@ -1,11 +1,22 @@
 {
-  "name": "open-source-unity-package.unit-test.Runtime.Tests",
-  "references": [
-    "open-source-unity-package.unit-test.Runtime"
-  ],
-  "optionalUnityReferences": [
-    "TestAssemblies"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": []
+    "name": "open-source-unity-package.unit-test.Runtime.Tests",
+    "rootNamespace": "",
+    "references": [
+        "open-source-unity-package.unit-test.Runtime",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
