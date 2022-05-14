@@ -52,6 +52,14 @@ jobs:
           restore-keys: |
             Library-
             
+      - uses: actions/cache@v2
+        with:
+          path: path/to/your/project/Library
+          key: Library-${{ github.event.repository.name }}-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-${{ github.event.repository.name }}-
+            Library-
+            
       - name: copy dir to new dir
         run: |
           pwd
@@ -106,7 +114,8 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }} 
+          targetPlatform: ${{ matrix.targetPlatform }}
+          projectPath: ${{ matrix.projectPath }
           
      # Upload build
       - uses: actions/upload-artifact@v2
