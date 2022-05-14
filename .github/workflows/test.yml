@@ -20,7 +20,8 @@ jobs:
       fail-fast: false
       matrix:
         testMode:
-          - playmode
+          - all
+          #- playmode
           #- editmode
         unityVersion:
           # Main LTS version : https://unity3d.com/unity/qa/lts-releases
