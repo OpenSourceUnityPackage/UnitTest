@@ -35,7 +35,7 @@ jobs:
           # - Android # Build an Android player.
           # - WebGL # WebGL.
         projectPath:
-          - ./package/${{ github.event.repository.name }}
+          - package/${{ github.event.repository.name }}
           
     steps:
       # Checkout sandbox project
@@ -84,6 +84,7 @@ jobs:
             
       # Run tests
       - name: "Run tests"
+        id: runTests
         uses: trudeaua21/unity-test-runner@main
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -102,5 +103,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Package Coverage results (edit + play, ${{ matrix.unityVersion }}-${{ matrix.targetPlatform }}-${{ matrix.testMode }}
-          path: ${{ steps.testRunner.outputs.coveragePath }}
+          path: ${{ steps.runTests.outputs.coveragePath }}
           retention-days: 1
