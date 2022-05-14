@@ -35,7 +35,7 @@ jobs:
           # - Android # Build an Android player.
           # - WebGL # WebGL.
         projectPath:
-          - ./package/
+          - ./package/${{ github.event.repository.name }}
           
     steps:
       # Checkout sandbox project
