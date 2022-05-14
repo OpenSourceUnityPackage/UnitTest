@@ -54,7 +54,7 @@ jobs:
             
       - uses: actions/cache@v2
         with:
-          path: path/to/your/project/Library
+          path: ${{ matrix.projectPath }}/Library
           key: Library-${{ github.event.repository.name }}-${{ matrix.targetPlatform }}
           restore-keys: |
             Library-${{ github.event.repository.name }}-
