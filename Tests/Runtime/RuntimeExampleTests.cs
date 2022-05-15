@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEngine;
 using UnityEngine.TestTools;
 
 public class RuntimeExampleTests
@@ -10,6 +12,18 @@ public class RuntimeExampleTests
     {
         // Use the Assert class to test conditions
         Assert.AreEqual(2, 2);
+    }
+    
+    [Test]
+    public void hasProcessorTest()
+    {
+        string processorString = "thing(arg1=false)";
+
+        bool trueResult = processorString.Contains("thing");
+        bool falseResult = processorString.Contains("owijfoij");
+
+        Assert.IsTrue(trueResult);
+        Assert.IsFalse(falseResult);
     }
     
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use

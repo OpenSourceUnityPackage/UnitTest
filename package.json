@@ -1,5 +1,5 @@
 {
-  "name": "open-source-unity-package.unit-test",
+  "name": "com.open-source-unity-package.unit-test",
   "displayName": "UnitTest",
   "description": "",
   "version": "0.0.0",
@@ -13,7 +13,9 @@
     "name": "OpenSourceUnityPackage",
     "url": "https://github.com/OpenSourceUnityPackage"
   },
-  "dependencies": {},
+  "dependencies": {
+    "com.unity.test-framework": "1.1.27"
+  },
   "keywords": [
     ""
   ],
