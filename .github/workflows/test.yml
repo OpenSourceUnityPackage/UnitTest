@@ -89,23 +89,5 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           testMode: ${{ matrix.testMode }}
           packageMode: true
-           # List of parameters here : https://docs.unity3d.com/Manual/CommandLineArguments.html
-          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+open-source-unity-package.unit-test.*,-*Tests*'
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          
-      # Upload coverage
-      - name: Upload coverage results
-        uses: actions/upload-artifact@v3
-        with:
-          name: Package Coverage results (${{ matrix.testMode }}-${{ matrix.unityVersion }}-${{ matrix.testMode }}
-          path: ${{ steps.runTests.outputs.coveragePath }}
-          retention-days: 1
-
-      # Upload coverage
-      - name: Upload coverage results
-        uses: actions/upload-artifact@v3
-        with:
-          name: Package Coverage results (${{ matrix.testMode }}-${{ matrix.unityVersion }}-${{ matrix.testMode }}
-          path: ${{ matrix.projectPath }}/${{ steps.runTests.outputs.coveragePath }}
-          retention-days: 1
